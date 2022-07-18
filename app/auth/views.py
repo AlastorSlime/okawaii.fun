@@ -1,11 +1,11 @@
-from . import auth
+from . import auth_blueprint
 
 from app.utils import verify_credentials, protected
  
 from quart import request, session, redirect, flash, render_template, abort
 
 
-@auth.route("/login", methods=["GET","POST"])
+@auth_blueprint.route("/login", methods=["GET","POST"])
 async def login():
     if request.method == "POST":
         form = await request.form 
@@ -25,7 +25,7 @@ async def login():
     
     return await render_template("login.html")
 
-@auth.route("/logout")
+@auth_blueprint.route("/logout")
 @protected
 async def logout():
     session.clear()

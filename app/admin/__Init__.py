@@ -1,6 +1,6 @@
 from quart import Blueprint
 
-admin = Blueprint(
+admin_blueprint = Blueprint(
     "admin",
     __name__,
     url_prefix="/admin",

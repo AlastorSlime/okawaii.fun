@@ -1,11 +1,11 @@
-from . import admin 
+from . import admin_blueprint
 
 from app.services import AlreadyExists, UrlService, NotFound
 from app.utils import protected
 
 from quart import render_template, request, abort, redirect, flash
 
-@admin.route("/")
+@admin_blueprint.route("/")
 @protected
 async def panel():
     urls = await UrlService.get_all()
@@ -15,7 +15,7 @@ async def panel():
         total_urls=len(urls),
     )
 
-@admin.route("/get/<id>")
+@admin_blueprint.route("/get/<id>")
 async def get(id):
     try:
         data = await UrlService.get_by_id(id=id)
@@ -27,7 +27,7 @@ async def get(id):
     except NotFound:
         abort(404)
 
-@admin.route("/delete/<id>")
+@admin_blueprint.route("/delete/<id>")
 @protected
 async def delete(id):
     try:
@@ -38,7 +38,7 @@ async def delete(id):
         await flash(f"Couldn't find /{id} url in the database.", category="error")
         return redirect("/admin")
 
-@admin.route("/create", methods=["POST"])
+@admin_blueprint.route("/create", methods=["POST"])
 @protected
 async def create():
     form = await request.form

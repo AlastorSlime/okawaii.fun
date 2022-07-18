@@ -1,6 +1,6 @@
 from quart import Blueprint 
 
-auth = Blueprint(
+auth_blurpint = Blueprint(
     "auth",
     __name__,
     url_prefix="/auth",
