@@ -23,13 +23,13 @@ def create_app() -> Quart:
 
 
 def register_blueprints(app: Quart):
-    from app.admin import admin_blueprint 
-    from app.auth import auth_blueprint
-    from app.core import core_blueprint 
+    from . import admin
+    from . import auth
+    from . import core
     
-    app.register_blueprint(admin_blueprint)
-    app.register_blueprint(auth_blueprint)
-    app.register_blueprint(core_blueprint)
+    app.register_blueprint(admin.admin_blueprint)
+    app.register_blueprint(auth.auth_blueprint)
+    app.register_blueprint(core.core_blueprint)
 
 
 def initialize_database(app: Quart):
