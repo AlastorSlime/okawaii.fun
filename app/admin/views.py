@@ -5,7 +5,7 @@ from app.utils import protected
 
 from quart import render_template, request, abort, redirect, flash
 
-@admin_blueprint.route("/")
+@admi_blueprint.route("/")
 @protected
 async def panel():
     urls = await UrlService.get_all()
