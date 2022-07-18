@@ -1,1 +1,1 @@
-web: hypercorn main:app --port $PORT
+web: hypercorn main:app --server-name 0.0.0.0:$PORT
