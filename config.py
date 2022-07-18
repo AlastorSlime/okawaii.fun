@@ -15,6 +15,7 @@ class AppConfig:
     PORT = 5000
 
     # Environemntal settings.
+    RUN_PORT = secrets.get_int("PORT") or 5000
     SECRET_KEY = secrets.get("APP_SECRET_KEY")
     POSTGRESQL_CONNECTION_STRING = secrets.get("POSTGRESQL_CONNECTION_STRING")
 
