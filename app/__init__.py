@@ -6,7 +6,8 @@ def create_app() -> Quart:
     """
     app = Quart(
         __name__,
-        static_folder="static"
+        static_folder="static",
+        template_folder="templates",
     )
 
     CONFIG_OBJ = "config.AppConfig"
@@ -23,10 +24,10 @@ def create_app() -> Quart:
 
 
 def register_blueprints(app: Quart):
-    from app.admin import admin_blueprint
-    from app.admin import auth_blueprint
-    from app.core import core_blueprint
-    
+    from app.blueprints.admin import admin_blueprint
+    from app.blueprints.auth import auth_blueprint
+    from app.blueprints.core import core_blueprint
+
     app.register_blueprint(admin_blueprint)
     app.register_blueprint(auth_blueprint)
     app.register_blueprint(core_blueprint)

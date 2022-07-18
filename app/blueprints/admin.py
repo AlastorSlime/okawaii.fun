@@ -1,9 +1,13 @@
-from . import admin_blueprint
-
 from app.services import AlreadyExists, UrlService, NotFound
 from app.utils import protected
 
-from quart import render_template, request, abort, redirect, flash
+from quart import Blueprint, render_template, request, abort, redirect, flash
+
+admin_blueprint = Blueprint(
+    "admin",
+    __name__,
+    url_prefix="/admin"
+)
 
 @admin_blueprint.route("/")
 @protected

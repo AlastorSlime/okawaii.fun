@@ -1,9 +1,12 @@
-from . import auth_blueprint
-
 from app.utils import verify_credentials, protected
  
-from quart import request, session, redirect, flash, render_template, abort
+from quart import Blueprint, request, session, redirect, flash, render_template, abort
 
+auth_blueprint = Blueprint(
+    "auth",
+    __name__,
+    url_prefix="/auth"
+)
 
 @auth_blueprint.route("/login", methods=["GET","POST"])
 async def login():

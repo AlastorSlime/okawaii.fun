@@ -1,6 +1,11 @@
-from . import core_blueprint
-from quart import render_template, redirect, abort, flash
 from app.services import NotFound, UrlService
+
+from quart import Blueprint, render_template, redirect, abort, flash
+
+core_blueprint = Blueprint(
+    "core",
+    __name__,
+)
 
 @core_blueprint.route("/")
 async def root():
