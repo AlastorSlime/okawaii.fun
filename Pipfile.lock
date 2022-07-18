@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2a564681c5882b10c621a2270b6b5c596d4c6eed9a0650d1ffc0aedc3ecf0816"
+            "sha256": "797375e328994921bd8370e26312320e542adb4cd6a45db12ed1308c9e546d56"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -21,7 +21,7 @@
                 "sha256:7a973fc22b29e9962d0897805ace5856e6a566ab1f0c8e5c91ff6c866519c937",
                 "sha256:8334f23235248a3b2e83b2c3a78a22674f39969b96397126cc93664d9a901e59"
             ],
-            "markers": "python_version < '4.0' and python_full_version >= '3.6.0'",
+            "markers": "python_version >= '3.6' and python_version < '4.0'",
             "version": "==0.8.0"
         },
         "aiosqlite": {
@@ -29,7 +29,7 @@
                 "sha256:6c49dc6d3405929b1d08eeccc72306d3677503cc5e5e43771efc1e00232e8231",
                 "sha256:f0e6acc24bc4864149267ac82fb46dfb3be4455f99fe21df82609cc6e6baee51"
             ],
-            "markers": "python_full_version >= '3.6.0'",
+            "markers": "python_version >= '3.6'",
             "version": "==0.17.0"
         },
         "asyncpg": {
@@ -93,7 +93,7 @@
                 "sha256:70813c1135087a248a4d38cc0e1a0181ffab2188141a93eaf567940c3957ff06",
                 "sha256:8ddd78563b633ca55346c8cd41ec0af27d3c79931828beffb46ce70a379e7442"
             ],
-            "markers": "python_full_version >= '3.6.0'",
+            "markers": "python_version >= '3.6'",
             "version": "==0.13.0"
         },
         "h2": {
@@ -260,6 +260,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==4.3.0"
+        },
+        "uvicorn": {
+            "hashes": [
+                "sha256:c19a057deb1c5bb060946e2e5c262fc01590c6529c0af2c3d9ce941e89bc30e0",
+                "sha256:cade07c403c397f9fe275492a48c1b869efd175d5d8a692df649e6e7e2ed8f4e"
+            ],
+            "index": "pypi",
+            "version": "==0.18.2"
         },
         "werkzeug": {
             "hashes": [

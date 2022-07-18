@@ -1,1 +1,1 @@
-web: hypercorn main:app --server-name 127.0.0.1:$PORT
+web: uvicorn main:app --host=0.0.0.0 --port=$PORT
