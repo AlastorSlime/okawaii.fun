@@ -1,1 +1,1 @@
-web: pipenv run start
+web: hypercorn main:app 

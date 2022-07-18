@@ -12,9 +12,5 @@ hypercorn = "==0.13.2"
 
 [dev-packages]
 
-[scripts]
-# Start the server in production mode.
-start = "hypercorn main:app"
-
 [requires]
 python_version = "3.9"
