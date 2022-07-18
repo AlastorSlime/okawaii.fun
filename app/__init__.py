@@ -23,9 +23,9 @@ def create_app() -> Quart:
 
 
 def register_blueprints(app: Quart):
-    from app.admin import admin 
-    from app.auth import auth
-    from app.core import core 
+    from .admin import admin 
+    from .auth import auth
+    from .core import core 
     
     app.register_blueprint(admin)
     app.register_blueprint(auth)
