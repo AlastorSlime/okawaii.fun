@@ -1,0 +1,5 @@
+quart==0.17.0
+tortoise-orm==0.19.2
+secretbox==2.6.2
+asyncpg==0.26.0
+hypercorn==0.13.2

@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+quart = "==0.17.0"
+tortoise-orm = "==0.19.2"
+secretbox = "==2.6.2"
+asyncpg = "==0.26.0"
+hypercorn = "==0.13.2"
+
+[dev-packages]
+
+[scripts]
+# Start the server in production mode.
+start = "hypercorn main:app"
+
+[requires]
+python_version = "3.9"

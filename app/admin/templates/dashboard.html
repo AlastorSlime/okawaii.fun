@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okawaii :: Dashboard</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <script src="https://kit.fontawesome.com/a78ae1fd95.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="big-brother">
+        <div class="container">
+            <div class="add-url-container">
+                <p>
+                    | ADD NEW URL
+                </p>
+                <div class="flashes">
+                    {% for message in get_flashed_messages(category_filter=["success"]) %}
+                    <div class="success">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+
+                    {% for message in get_flashed_messages(category_filter=["error"]) %}
+                    <div class="error">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        {{ message }}
+                    </div>                 
+                    {% endfor %}
+                </div>
+                <form action="/admin/create" method="post">
+                    <label for="id">ID</label>
+                    <input type="text" name="id" id="id" placeholder="e.g, github" required>
+                    <label for="redirect">Redirect</label>
+                    <input type="text" name="redirect" id="redirect" placeholder="https://github.com/NocturalDev"
+                        required>
+                    <button type="submit">
+                        Add
+                    </button>
+                </form>
+            </div>
+            <div class="urls-container">
+                <h2>| URLS</h2>
+                <ul>
+                    {% if total_urls > 0 %}
+                        {% for url in urls %}
+                        <li>
+                            <div class="url">
+                                <div class="url-id">
+                                    <a href="{{ url['redirect'] }}">/{{ url["id"] }}</a>
+                                </div>
+                                <div class="created-on">
+                                    Created on: {{ url["created_on"] }}
+                                </div>
+                                <div class="commands">
+                                    <a href="/admin/delete/{{ url['id'] }}"><button>Delete</button></a>
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    {% else %}
+                        <div class="empty-url-list">
+                            <p>
+                                Nothing But Chickens
+                            </p>
+                        </div>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
