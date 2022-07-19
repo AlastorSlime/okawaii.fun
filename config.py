@@ -8,9 +8,9 @@ class AppConfig:
     """
     
     # Default settings.
-    QUART_ENV = "development"
-    DEBUG = True
-    TESTING = True
+    QUART_ENV = "production"
+    DEBUG = False
+    TESTING = False
     WTF_CSRF_ENABLED = True 
 
     # Environemntal settings.
