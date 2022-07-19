@@ -23,7 +23,7 @@ async def login():
             session["authorized"] = True 
             return redirect("/admin")
 
-        await flash("Invalid credentials.")
+        await flash("Invalid credentials.", category="error")
         return redirect("/auth/login")
     
     return await render_template("login.html")

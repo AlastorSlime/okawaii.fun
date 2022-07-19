@@ -1,6 +1,6 @@
 from app.services import NotFound, UrlService
 
-from quart import Blueprint, render_template, redirect, abort, flash
+from quart import Blueprint, render_template, redirect, abort
 
 core_blueprint = Blueprint(
     "core",

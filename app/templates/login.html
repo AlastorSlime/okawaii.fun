@@ -1,29 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Okawaii :: Login</title>
-    <link rel="stylesheet" href="/static/css/login.css">
-</head>
-<body>
-    <div class="container">
-        <div class="login">
-            <h1>
-                Login
-            </h1>
-            <form action="/auth/login" method="post">
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" placeholder="e.g admin1O1" required>
+{% extends "shared/layout.html" %} 
 
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="*************" required>
-                <button type="submit">
-                    Login
-                </button>
-            </form>
-        </div>
+{% block content %}
+<!-- Static files -->
+<link rel="stylesheet" href="/static/css/login.css">
+
+<!-- Body/content. -->
+<div class="container">
+    <div class="login">
+        <h1>
+            Login
+        </h1>
+        <form action="/auth/login" method="post">
+            <div class="flashes">
+                {% for message in get_flashed_messages(category_filter=["error"]) %}
+                <div class="error">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    {{ message }}
+                </div>                 
+                {% endfor %}
+            </div>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="e.g admin1O1" required>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="*************" required>
+            <button type="submit">
+                Login
+            </button>
+        </form>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

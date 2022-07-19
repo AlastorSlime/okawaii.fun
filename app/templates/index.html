@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OKawaii</title>
-    <link rel="stylesheet" href="/static/css/index.css">
-    <script src="/static/js/index.js"></script>
-</head>
+{% extends "shared/layout.html" %} 
 
-<body>
-    <div class="content-area">
-        <div class="text-area">
-            <h1>O Kawaii Koto</h1>
-            <div class="line"></div>
-            <button onclick="redirectToLogin()">
-                Login
-            </button>
-        </div>
+{% block content %}
+<!-- Static files. -->
+<link rel="stylesheet" href="/static/css/index.css">
+
+<script src="/static/js/index.js"></script>
+
+<!-- Body/content. -->
+<div class="content-area">
+    <div class="text-area">
+        <h1>O Kawaii Koto</h1>
+        <div class="line"></div>
+        <button onclick="redirectToLogin()">
+            Login
+        </button>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

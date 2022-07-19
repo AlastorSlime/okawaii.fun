@@ -8,11 +8,10 @@ class AppConfig:
     """
     
     # Default settings.
-    QUART_ENV = "production"
-    DEBUG = False
-    TESTING = False
+    QUART_ENV = "development"
+    DEBUG = True
+    TESTING = True
     WTF_CSRF_ENABLED = True 
-    PORT = 5000
 
     # Environemntal settings.
     SECRET_KEY = secrets.get("APP_SECRET_KEY")

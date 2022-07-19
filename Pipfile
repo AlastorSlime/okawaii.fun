@@ -13,5 +13,9 @@ uvicorn = "==0.18.2"
 
 [dev-packages]
 
+[scripts]
+# Start the server in production mode.
+prod = "python main.py"
+
 [requires]
 python_version = "3.9.4"
