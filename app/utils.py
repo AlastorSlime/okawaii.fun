@@ -1,25 +1,25 @@
 from functools import wraps
-from quart import current_app, session, redirect
 
-def verify_credentials(
+from quart import session, redirect
+
+from app.models import Admin
+
+async def verify_credentials(
     username: str, 
     password: str
 ):
-    config = current_app.config
-    if (
-        username == config.get("ADMIN_USERNAME")
-        and 
-        password == config.get("ADMIN_PASSWORD")
-    ):
+    admin = await Admin.get_or_none(username=username, password=password) 
+    if admin:
         return True 
-    return False 
+    else:
+        return False 
 
 def protected(wrapped):
     def decorator(f):
         @wraps(f)
         async def decorated_func(*args, **kwargs):
             if not "authorized" in session:
-                return redirect("/auth/login")  
+                return redirect("/admin/login")  
             
             response = await f(*args, **kwargs)
             return response

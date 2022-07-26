@@ -16,7 +16,3 @@ class AppConfig:
     # Environemntal settings.
     SECRET_KEY = secrets.get("APP_SECRET_KEY")
     POSTGRESQL_CONNECTION_STRING = secrets.get("POSTGRESQL_CONNECTION_STRING")
-
-    # Admin Credentials.
-    ADMIN_USERNAME = secrets.get("ADMIN_USERNAME")
-    ADMIN_PASSWORD = secrets.get("ADMIN_PASSWORD")

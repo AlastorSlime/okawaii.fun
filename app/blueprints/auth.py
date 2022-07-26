@@ -7,7 +7,7 @@ auth_blueprint = Blueprint(
     __name__,
     url_prefix="/auth"
 )
-
+  
 @auth_blueprint.route("/login", methods=["GET","POST"])
 async def login():
     if request.method == "POST":
@@ -19,7 +19,7 @@ async def login():
         if not username and not password:
             return abort(400)
 
-        if verify_credentials(username, password):
+        if await verify_credentials(username, password):
             session["authorized"] = True 
             return redirect("/admin")
 

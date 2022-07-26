@@ -1,7 +1,7 @@
 # O Kawaii Koto
 It is a simple url shortener - https://www.okawaii.fun/
 
-Admin page:
+admin page:
 https://www.okawaii.fun/admin/ 
 
 # ! 

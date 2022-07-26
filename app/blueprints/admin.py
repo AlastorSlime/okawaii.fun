@@ -9,9 +9,21 @@ admin_blueprint = Blueprint(
     url_prefix="/admin"
 )
 
+"""
+* Routes decorated with `@protected` can only be accessed by the administrator.
+
+NOTE: You have to add an administrator directly in the database.
+
+Admin parameters:
+`id` char; unique field; max lenght = 30;
+`username` text;
+`password` text; 
+"""
+
+
 @admin_blueprint.route("/")
 @protected
-async def panel():
+async def dashboard():
     urls = await UrlService.get_all()
     return await render_template(
         "dashboard.html",
